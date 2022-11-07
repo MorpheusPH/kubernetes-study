@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+  annotations:
+    cert-manager.io/issuer: apps-issuer
+    cert-manager.io/common-name: morpheusph.io
+spec:
+  ingressClassName: kong
+  tls:
+  - hosts:
+      - myapp-127-0-0-1.nip.io
+    secretName: morpheus-127-0-0-1-nip-io
+  rules:
+  - host: myapp-127-0-0-1.nip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              number: 80

@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myapp-127-0-0-1-nip-io
+  namespace: default
+spec:  
+  commonName: morpheusph.io
+  dnsNames:
+  - myapp-127-0-0-1.nip.io
+  issuerRef:
+    group: cert-manager.io
+    kind: Issuer
+    name: apps-issuer
+  secretName: myapp-127-0-0-1-nip-io
+  usages:
+  - digital signature
+  - key encipherment
