@@ -4,13 +4,12 @@ metadata:
   name: myapp-ingress
   annotations:
     cert-manager.io/issuer: apps-issuer
-    cert-manager.io/common-name: morpheusph.io
 spec:
   ingressClassName: kong
   tls:
   - hosts:
       - myapp-127-0-0-1.nip.io
-    secretName: morpheus-127-0-0-1-nip-io
+    secretName: myapp-127-0-0-1-nip-io
   rules:
   - host: myapp-127-0-0-1.nip.io
     http:
