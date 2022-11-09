@@ -1,0 +1,17 @@
+[
+    { 
+        "op": "replace", 
+        "path": "/spec/rules/0/host", 
+        "value": "morphy-10-78-153-142.nip.io"
+    },
+    { 
+        "op": "replace", 
+        "path": "/spec/tls/0/hosts",
+        "value": "morphy-10-78-153-142.nip.io"
+    },
+    {
+        "op": "replace",
+        "path": "/spec/tls/0/secretName",
+        "value": "morphy-10-78-153-142.nip.io"
+    }
+]

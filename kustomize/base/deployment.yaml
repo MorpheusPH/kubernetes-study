@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        env:
+        - name: pgdb
+          value: pgdb-svc.postgresql.svc.cluster.local
+        - name: mq
+          value: rabbitmq-svc.rabbitmq.svc.cluster.local
+        - name: domain
+          value: morphy-127-0-0-1.nip.io
