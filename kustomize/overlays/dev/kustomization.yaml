@@ -14,5 +14,5 @@ patchesStrategicMerge:
 - service.yaml
 
 images:
-- name: docker.io/nginx
+- name: nginx
   newTag: stable
