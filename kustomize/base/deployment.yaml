@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx:latest
+      - image: docker.io/nginx:latest
         name: nginx
         env:
         - name: pgdb

@@ -20,5 +20,5 @@ patches:
   path: ingress-patch.json
 
 images:
-- name: nginx
+- name: docker.io/nginx
   newTag: 1.22.1
