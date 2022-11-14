@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: {{ .Values.spec.destination.server}}
+  project: default
+  source:
+    path: kustomize/overlays/dev
+    repoURL: https://github.com/MorpheusPH/kubernetes-study.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
