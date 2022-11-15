@@ -6,7 +6,7 @@
     },
     { 
         "op": "replace", 
-        "path": "/spec/tls/0/hosts",
+        "path": "/spec/tls/0/hosts/0",
         "value": "morphy-10-78-153-142.nip.io"
     },
     {
